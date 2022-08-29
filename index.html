@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>中考倒计时</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+      body, html {
+        height: 100%;
+      }
+      *{
+        background-color: rgb(246,246,246);
+        margin: 0;
+        padding: 0;
+      }
+      @font-face {
+        font-family: '汉仪瑞云妃宋';
+        src: url(./font/HYRuiYunFeiSongW.ttf);
+      }
+      @font-face {
+      /* 指定字体 */
+      font-family: '汉仪锦昌体简';
+      src: url(./font/HYJinChangTiJ.ttf);
+    }
+    @font-face {
+      font-family: '汉仪江南楷宋';
+      src: url(./font/HYJiangNanKaiSongW.ttf);
+    }
+      div.Son{
+        color: #232323;
+        font: 70rem '汉仪瑞云妃宋';
+        /* 文字居中 */
+        text-align: center;
+        width: fit-content;
+        height: fit-content;
+        /* 开启绝对定位 */
+        position: absolute;
+        /* 设置margin为auto使 */
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+      }
+      p.Slogan{
+        color: #293150;
+        font: 25rem '汉仪江南楷宋';
+        margin-top: 30rem;
+        margin-bottom: 30rem;
+      }
+      span{
+        font: 90rem '汉仪锦昌体简';
+        color: #e1a105;
+        /* color: #cf292f; */
+        background-color: rgb(230, 230, 230, .5);
+        border-radius: 10rem;
+        padding: 10rem;
+      }
+
+      /* 设置footer停靠 */
+
+      div.Dad{
+      min-height: 100%;
+    }
+    .Dad .FooterPush{
+      /* Footer 的高度 */
+      height: 20px;
+    }
+    footer{
+      /* 清除浮动元素格式 */
+      clear: both;
+      position: relative;
+      /* Footer 高度的负值 */
+      margin-top: -20px;
+      height: 20px;
+      color: rgb(147, 162, 169);
+      font-size: 7rem;
+      text-align: center;
+    }
+    footer#Top{
+      margin-top: -40px;
+    }
+
+    footer > a{
+      color: rgb(147, 162, 169);
+      text-decoration: none;
+    }
+    </style>
+</head>
+<body>
+
+  <div class="Dad">
+    <div class="Son">
+      <p class="Slogan">只有坚持了别人不能坚持的坚持，</p>
+      <p class="Main">距离中考还有 <span></span> 天！</p>
+      <p class="Slogan">才能成就别人不能成就的成就。</p>
+    </div>
+    <div class="FooterPush"></div>
+  </div>
+  
+  <footer id="Bottom">感谢：
+    <a href="https://www.hanyi.com.cn/">汉仪字库</a>
+    <a href="http://www.davidqiu.com/">DavidQiu</a>
+    <a href="https://blog.csdn.net/weixin_43967603">LeungZhenPang</a>
+  </footer>
+  <footer id="Top">© 2022 PuTLin</footer>
+
+<!-- 设置倒计时 -->
+<script>
+    window.onload = function () {
+        var curTime = new Date();
+        var endTime = new Date("2023,6,12");
+        var lastTime = Math.ceil((endTime.getTime() - curTime.getTime())/(24 * 60 *60 * 1000));
+        document.querySelector("span").innerHTML = lastTime;
+    }
+</script>
+<script>
+  /* 长宽占位 rem算法, 根据root的rem来计算各元素相对rem, 默认html 320/20 = 16px */
+  /* 长宽占位 rem算法, 根据root的rem来计算各元素相对rem, 默认html 320/20 = 16px */
+  function placeholderPic(){
+      var w = document.documentElement.offsetWidth;
+      document.documentElement.style.fontSize=w/1000+'px';
+  }
+  placeholderPic();
+  window.onresize=function(){
+      placeholderPic();
+  }
+</script>
+</body>
+</html>
